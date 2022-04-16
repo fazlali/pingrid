@@ -1,0 +1,49 @@
+$body-bg: #ffffff;
+$secondary: #767676;
+$body-color: #000000;
+$light: #efefef;
+
+$border-radius: 1em;
+$border-radius-sm: 0.75em;
+$border-radius-lg: 1.5em;
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex, grid;
+
+$font-family-base: IRANYekan, sans-serif;
+$font-size-root: 14px;
+$line-height-base: 2;
+$line-height-sm: 1.5;
+$line-height-lg: 2.5;
+$font-weight-bolder: 800;
+$font-weight-lighter: 100;
+
+$box-shadow-sm: 0 .25rem .5rem rgba(#000000, .075);
+$box-shadow-lg: 0 1rem 3rem rgba(#000000, .375);
+
+$input-focus-box-shadow: 0;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  //xl: 1140px,
+  //xxl: 1320px
+);
+//$container-padding-x: 1.5rem;
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "1x2": calc(2 / 1 * 100%),
+  "2x1": calc(1 / 2 * 100%),
+  "5x7": calc(7 / 5 * 100%),
+  "5x9": calc(9 / 5 * 100%)
+);
+
+$link-color: black;
+$link-decoration: none;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
