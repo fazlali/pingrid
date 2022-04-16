@@ -1,15 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="container">
+    <div class="text-center mt-5">
+      <h1>A Pinterest grid like style</h1>
+      <div class="mt-3">by <a href="https://fazlali.net">Amin Fazlali</a></div>
+    </div>
   </div>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
