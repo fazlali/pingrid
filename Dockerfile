@@ -10,5 +10,6 @@ ENV HOST=0.0.0.0
 ENV PORT=80
 
 COPY . .
+RUN npm run build
 
 CMD [ "npm", "run", "preview" ]
