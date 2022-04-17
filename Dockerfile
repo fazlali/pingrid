@@ -10,6 +10,5 @@ ENV HOST=0.0.0.0
 ENV PORT=80
 
 COPY . .
-RUN npm run preview
 
 CMD [ "npm", "run", "preview" ]
