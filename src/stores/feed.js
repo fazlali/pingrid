@@ -18,7 +18,7 @@ export const useFeedStore = defineStore({
     async loadMore() {
       if (this.hasMore) {
         this.loading = true
-        let pins = await (await fetch('http://xoosha.com/ws/1/test.php?offset=' + this.pins.length, {
+        let pins = await (await fetch('https://xoosha.com/ws/1/test.php?offset=' + this.pins.length, {
           headers: {
             // 'Content-Encoding': 'gzip, compress, deflate, br'
           }
