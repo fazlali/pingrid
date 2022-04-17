@@ -18,13 +18,16 @@ export const useFeedStore = defineStore({
     async loadMore() {
       if (this.hasMore) {
         this.loading = true
-        let pins = await (await fetch('https://xoosha.com/ws/1/test.php?offset=' + this.pins.length, {
+        const pins = await (await fetch('https://xoosha.com/ws/1/test.php?offset=' + this.pins.length, {
           headers: {
             // 'Content-Encoding': 'gzip, compress, deflate, br'
           }
         })).json()
         if (pins.length) {
-          this.pins.push(...pins)
+          this.pins.push(...pins.map(pin => {
+            Object.assign(pin, {width: 600, height: 800})
+            return pin
+          }))
         }
         else {
           this.hasMore = false

@@ -5,7 +5,8 @@ import Loading from '@/components/Loading.vue'
 import { useFeedStore } from "../stores/feed";
 
 import { onUnmounted, onMounted, nextTick } from 'vue'
-
+import { onBeforeRouteUpdate, onBeforeRouteLeave, useRoute } from 'vue-router'
+const route = useRoute()
 const feed = useFeedStore()
 
 const onScroll = () => {
@@ -23,18 +24,30 @@ const loadMore = async () => {
   if (!feed.loading){
     await feed.loadMore()
     nextTick(() => {
-      onScroll()
+      setTimeout(onScroll, 500)
     })
   }
 }
 
 onMounted(() => {
   document.addEventListener('scroll', onScroll)
+  feed.search(route.query.q || '')
   onScroll()
 })
 onUnmounted(() => {
   document.removeEventListener('scroll', onScroll)
 })
+
+onBeforeRouteUpdate((to, from, next) => {
+  feed.search(to.query.q || '')
+  nextTick(onScroll)
+  next()
+})
+onBeforeRouteLeave((to, from, next) => {
+  feed.search('')
+  next()
+})
+
 </script>
 
 <template>

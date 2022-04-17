@@ -60,7 +60,7 @@ export default {
       return this.gridWrapperWidth < 400 ? this.gridWrapperWidth / this.cols : 200
     },
     gridHeight () {
-      return Math.max(...this.itemBoundings.map(b => b.top + b.height))
+      return this.itemBoundings.length ? Math.max(...this.itemBoundings.map(b => b.top + b.height)): 0
     },
     gridWidth () {
       return this.cols * this.colWidth
