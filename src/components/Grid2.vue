@@ -6,7 +6,7 @@
     >
       <grid-item
         v-for="(item, index) in items"
-        :key="`feed-grid-item-${item.id}`"
+        :key="`feed-grid-item-${item.image_url}`"
         :position="itemBoundings[index]"
         @resize="size => updateItemSize(index, size)"
       >

@@ -1,8 +1,15 @@
 <script setup>
 import {useFeedStore} from "./stores/feed";
+import {ref, watch} from "vue";
+import {useRouter} from "vue-router"
+const router = useRouter()
+
 const feed = useFeedStore()
 
-let q = ""
+let q = ref("")
+
+watch(() => q.value, (query) => {router.push({name: 'home', query: {q:query}})})
+
 </script>
 
 <template>

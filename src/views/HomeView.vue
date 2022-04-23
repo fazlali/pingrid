@@ -15,7 +15,7 @@ const onScroll = () => {
   const clientHeight = document.scrollingElement.clientHeight
   const scrollBottom = scrollHeight - clientHeight - scrollTop
   const bottom = Math.floor(100 * scrollBottom / clientHeight)
-  if (bottom < 50) {
+  if (bottom < 150) {
     loadMore()
   }
 }
